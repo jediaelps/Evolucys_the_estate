@@ -1,131 +1,188 @@
-Versão atual: **Fase 4.5.5** — [narração, linguagem natural e ajuda contextual](FASE4_5_5.md).
-
-Base anterior: **Fase 4.5.4** — [diálogos e memória contextual](FASE4_5_4.md).
-
-Layout preservado da **Fase 4.5.3**. Consulte [FASE4_5_3.md](FASE4_5_3.md) para o ajuste visual final e sua validação.
-
-Base de sistemas: [Fase 4.5.2](FASE4_5_2.md) — foco, confiança, exploração cautelosa, esconderijos, rondas e iluminação.
-
-Consulte [FASE4_5.md](FASE4_5.md) para inspeção visual, documentos sem duplicação no histórico e recursos PNG offline.
+<div align="center">
 
 # EVOLUCYS: THE ESTATE
 
-**Fase 4.5.5:** execute `python visual.py` para jogar por comandos + Enter. O inventário é um painel integrado sobre o cenário escurecido, sem janela externa: Joseph frontal provisório, seis slots e descrição com ações pelo mouse. Abra com `inventário` e feche com ESC, Fechar ou `fechar inventário`. Enquanto aberto, a exploração fica bloqueada; ações de itens continuam pelo mesmo parser e respeitam turnos. A escadaria e o terminal permanecem disponíveis. Consulte `GUI_README.md`.
+### A sobrevivência começa quando a estrada termina.
 
-Jogo de exploração textual em português, sem dependências externas. Requer Python 3.8 ou superior.
+**Survival Horror • Mistério • Ficção Científica • Exploração narrativa**
 
-## Executar
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Interface](https://img.shields.io/badge/interface-Tkinter-informational)
+![Idioma](https://img.shields.io/badge/idioma-PT--BR-success)
 
-Abra um terminal nesta pasta e execute:
+*Um jogo independente de terror em primeira pessoa no qual o jogador explora cenários e toma decisões por meio de comandos escritos.*
 
-```sh
+</div>
+
+---
+
+## Sobre o jogo
+
+**Evolucys: The Estate** é um survival horror narrativo de exploração, investigação e resolução de enigmas. Inspirado pela tensão dos jogos clássicos de terror, combina cenários visuais estáticos, descrições atmosféricas e interação por linguagem natural.
+
+Em vez de controlar o protagonista com WASD ou clicar nos cenários para realizar ações, você **escreve o que deseja fazer**. Observe detalhes, investigue objetos, procure caminhos, interprete pistas e decida como reagir às ameaças.
+
+O objetivo não é derrotar tudo que aparece no caminho: **sobreviver exige atenção, cautela e improvisação**.
+
+## Sinopse
+
+Joseph, um empresário de 30 anos, está viajando por uma estrada isolada quando uma tempestade e um problema no pneu interrompem sua jornada. Em busca de ferramentas, ele se aproxima de uma antiga propriedade, onde uma imponente mansão se ergue em meio ao abandono.
+
+A princípio, tudo o que Joseph deseja é encontrar uma maneira de consertar o carro e seguir viagem. Mas uma série de acontecimentos o leva para dentro de um lugar que esconde muito mais do que quartos vazios e portas trancadas.
+
+Documentos esquecidos, instalações ocultas e sinais de experiências científicas revelam fragmentos de um projeto conhecido como **EVOLUCYS**. Algo aconteceu naquela propriedade — e talvez nem tudo o que vive ali seja humano.
+
+**Encontre uma saída. Descubra a verdade. Sobreviva à noite.**
+
+## Como funciona
+
+### Exploração por comandos
+
+A interação é feita principalmente digitando ações em português. O sistema interpreta comandos e variações de linguagem natural dentro das possibilidades do cenário.
+
+Exemplos de ações:
+
+```text
+olhar
+examinar a porta
+investigar a estante
+pegar lanterna
+equipar lanterna
+ligar lanterna
+abrir inventário
+passar pela porta com cuidado
+esconder
+```
+
+As ações disponíveis dependem do ambiente, dos objetos presentes e do estado atual da partida. O jogo oferece ajuda contextual sem entregar automaticamente as soluções.
+
+### Sobrevivência e recursos
+
+- **Inventário de seis espaços:** escolha o que carregar e o que deixar para trás.
+- **Vida e medo:** ferimentos e tensão afetam a sobrevivência.
+- **Recursos limitados:** itens de cura, iluminação e munição exigem planejamento.
+- **Ameaças no próprio cenário:** situações de perigo acontecem durante a exploração, sem uma tela de combate separada.
+- **Furtividade, fuga e improvisação:** enfrentar um inimigo nem sempre é necessário ou aconselhável.
+- **Investigação ambiental:** anotações, documentos, objetos e mecanismos ajudam a compreender a propriedade.
+
+### Um mundo interligado
+
+O projeto contempla áreas externas, térreo, andar superior, porão, garagem e instalações de pesquisa. Portas, atalhos, bloqueios e caminhos alternativos fazem parte do planejamento da exploração.
+
+O mapa e a infraestrutura de navegação estão sendo implementados por etapas. **A existência de uma área no mapa não significa que todo o seu conteúdo narrativo e todos os seus enigmas estejam concluídos.**
+
+## Estado do desenvolvimento
+
+> **Protótipo jogável em desenvolvimento ativo.** Este repositório contém sistemas funcionais de exploração, interface, inventário, confronto e navegação, mas ainda não representa um jogo completo.
+
+| Sistema | Situação |
+| --- | --- |
+| Interpretação de comandos e ajuda contextual | Implementado, em evolução |
+| Interface visual em Tkinter | Protótipo funcional |
+| Inventário com seis espaços | Implementado |
+| Vida, medo, itens e recursos | Implementado no protótipo |
+| Confronto, fuga e furtividade | Implementados no protótipo |
+| Prólogo e começo canônico de Joseph | Implementados estruturalmente |
+| Mapa ampliado da propriedade | Estrutura de navegação implementada por fases |
+| Campanha, enigmas e eventos completos | Em desenvolvimento |
+| Salvamento e carregamento completos | Planejados, ainda não implementados |
+| Arte, animações e áudio definitivos | Em desenvolvimento |
+| Localização para outros idiomas | Planejada |
+| Empacotamento para Windows | Planejado |
+
+O detalhamento técnico e o histórico das etapas estão disponíveis em [CAMPAIGN_PROGRESS.md](CAMPAIGN_PROGRESS.md) e [WORLD_DESIGN.md](WORLD_DESIGN.md).
+
+## Executar o projeto
+
+### Requisitos
+
+- Python **3.8 ou superior**.
+- Um ambiente desktop com suporte a **Tkinter** (incluído na maioria das instalações padrão de Python para Windows).
+- Não são necessárias bibliotecas externas para o protótipo atual.
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/jediaelps/Evolucys_the_estate.git
+cd Evolucys_the_estate
+```
+
+**Versão visual (recomendada):**
+
+```bash
+python visual.py
+```
+
+**Versão de terminal:**
+
+```bash
 python main.py
 ```
 
-Digite `ajuda` para consultar os comandos e `sair` para encerrar. O progresso existe apenas durante a sessão; ainda não há salvamento. O menu de continuar após morrer reinicia a partida.
+Na versão de terminal, digite `ajuda` para consultar os comandos e `sair` para encerrar.
 
-## Organização
+> **Atenção:** o projeto ainda não possui um sistema completo de salvar/carregar. O progresso da sessão não é persistido entre execuções.
 
-- `world.py`: cômodos, objetos, conteúdos escondidos e portas compartilhadas entre passagens.
-- `game_state.py`: Joseph, vida, medo, celular, inventário de seis espaços e item equipado.
-- `command_parser.py`: comandos e regras de interação.
-- `confrontation.py`: inimigos, ações de confronto e resolução de uma reação por turno.
-- `main.py`: interface de terminal e reinício.
-- `test_game.py`: testes de integração e regressão.
-- `test_confrontation.py`: turnos, combate, furtividade, fuga e regressão do percurso pacífico.
-- `items.py`: balanceamento, estado de armas e perfil de medo.
-- `survival.py`: cura, chá, energético, lanterna e recarga.
-- `feedback.py`: pensamentos contextuais reutilizáveis.
-- `test_survival.py`: regressões da Fase 3.
-
-## Fase 3 — sobrevivência
-
-Vida e medo permanecem entre 0 e 100. A bandagem cura 20, o spray de cura 50 e o kit médico até 100; curas não ultrapassam a vida máxima. Com vida cheia, Joseph preserva o item e pensa “Não preciso disso agora.” A tentativa ainda custa uma ação. Há duas bandagens acessíveis, um spray guardado no armário e um kit protegido em uma caixa no porão. Estes recursos são finitos.
-
-Consumíveis pessoais são usados dentro do inventário. Fora dele, Joseph recomenda abrir o inventário, sem consumir o item ou um turno. O chá reduz o medo em 30. O energético concede duas cargas persistentes de foco: cada carga impede uma perda de ação provocada por surpresa. Perceber sons e passar turnos não gastam cargas. O foco não reduz dano, não aumenta ataque e não elimina o medo. Não acumula nem renova cargas enquanto houver alguma ativa. A defesa reduz o golpe normal de 16 para 8, independentemente do foco.
-
-A pistola fica no cofre e tem capacidade para 12 tiros, começa com dois e causa 35 de dano. Uma caixa de três cartuchos está no armário. `equipar pistola`, `atacar` e `recarregar` são ações distintas. A recarga transfere apenas o necessário; sobras permanecem na caixa e a caixa vazia sai do inventário. Arma vazia não dispara nem vira automaticamente um ataque corpo a corpo, mas a tentativa permite reação inimiga. Largar e recuperar a arma preserva a munição. Não existem munição infinita ou reaparecimento de recursos.
-
-Com medo a partir de 70, o dano da pistola cai em 5: uma penalidade determinística de controle, sem chance aleatória de perder um cartucho. Respiração, batimentos e percepção são expostos como dados para a futura interface; esses efeitos ainda não têm áudio próprio. Os valores estão centralizados em `items.py`.
-
-Use `ligar lanterna`, `desligar lanterna` ou `usar lanterna` para alternar seu estado, com ela equipada. `usar lanterna no vigia` permite a distração da Fase 2. Uma lanterna acesa, mesmo carregada sem estar equipada ou largada no cômodo, pode denunciar Joseph a um inimigo sensível à luz. Desligue-a antes de uma entrada furtiva. A fuga continua garantida por uma saída aberta, e o puzzle continua solucionável sem combate.
-
-O inventário mantém seis espaços: arma e caixa de munição ocupam um espaço cada. Nesta fase, não há pilhas de itens com o mesmo nome; uma segunda bandagem pode ser coletada após consumir ou largar a primeira em outro cômodo. O jogo impede largar um item sobre outro homônimo para não apagar recursos do cenário.
-
-`GameState.snapshot()` fornece cópias do estado para HUD, inventário, munição, celular, luz, medo e confronto, sem depender da interface. Os pensamentos são textos reutilizáveis; a interface Tkinter atual é iniciada por `visual.py`.
-
-## Teste manual da Fase 3
-
-Inicie com `python main.py`. Na entrada, experimente:
+## Estrutura do projeto
 
 ```text
-usar lanterna
-pegar lanterna
-usar lanterna
-equipar lanterna
-ligar lanterna
-desligar lanterna
-pegar bandagem
-usar bandagem
-status
+Evolucys_the_estate/
+├── main.py                 # Execução em terminal
+├── visual.py               # Interface gráfica em Tkinter
+├── visual_session.py       # Sessão da interface visual
+├── game_state.py           # Estado do jogador e do mundo
+├── world.py                # Ambientes, objetos e conexões
+├── command_parser.py       # Interpretação e execução de comandos
+├── command_language.py     # Vocabulário e linguagem de interação
+├── confrontation.py       # Encontros e reações de ameaças
+├── exploration_systems.py  # Sistemas de exploração
+├── items.py                # Definição e comportamento dos itens
+├── survival.py             # Recursos e sobrevivência
+├── inventory_view.py       # Interface do inventário
+├── assets/                 # Recursos visuais e de interface
+├── audio/                  # Recursos e documentação de áudio
+├── test_*.py               # Testes automatizados
+├── WORLD_DESIGN.md         # Mapa e decisões de design
+├── CAMPAIGN_PROGRESS.md    # Histórico de desenvolvimento
+└── GUI_README.md           # Detalhes da interface visual
 ```
 
-As primeiras tentativas mostram que é necessário pegar/equipar a lanterna. A bandagem é preservada enquanto a vida está cheia. Para observar o energético, vá à cozinha (`ir norte`, `ir oeste`), pegue `energético`, abra o inventário, use-o e consulte `status`; as duas cargas persistem ao esperar ou explorar. Consulte FASE4_5_2.md para testar sustos nas demonstrações.
+A estrutura acima mostra os componentes principais, não todos os arquivos existentes.
 
-Para testar cura e arma em confronto, resolva o percurso abaixo, recolha a pistola do cofre e a munição do armário e libere espaços com `largar ITEM` quando necessário. Entre normalmente no porão; `esperar` anuncia um golpe e o próximo `esperar` causa dano. Abra o inventário para `usar bandagem`, feche-o e experimente `equipar pistola`, `recarregar` e `atacar`, consultando `status` entre ações. Para sair, `fugir sul`. Você também pode pegar spray no armário e abrir a caixa médica no porão para testar as outras curas. Faça testes diferentes em partidas novas para não esgotar os recursos.
+## Testes
 
-Os quatro cômodos originais foram preservados. O novo bloco acrescenta o Arquivo do Porão. Examinar objetos pode revelar pistas; abrir recipientes disponibiliza seu conteúdo no cômodo, sem colocá-lo automaticamente no inventário. Portas precisam ser abertas antes de atravessar. Itens podem ser largados e recuperados para administrar os seis espaços. As descrições continuam disponíveis após coletar documentos. Beber chá reduz o medo em 30, até o mínimo de zero, e remove o item equipado quando necessário.
+A base inclui testes automatizados de sistemas de jogo, navegação, narrativa, interface e regressão.
 
-## Validar
+Para executar os testes disponíveis:
 
-```sh
+```bash
 python -B -m unittest -v
 ```
 
-## Confronto por ações
+## Direção do projeto
 
-O vigia ronda o porão dentro do ambiente de exploração, sem tela de batalha. Nada acontece enquanto você pensa ou digita. Cada comando de ação reconhecido (inclusive uma tentativa sem sucesso) consome um turno, resolve Joseph primeiro e depois uma reação da ameaça presente. `ajuda`, `status` e `inventário` são gratuitos; comandos desconhecidos e linhas vazias também não avançam o tempo. `olhar` e `examinar` consomem turno.
+A proposta de **Evolucys: The Estate** é fazer da interpretação do ambiente a principal ferramenta do jogador. Uma descrição, um objeto aparentemente irrelevante ou um ruído distante podem influenciar a próxima decisão.
 
-- `atacar` ou `atacar vigia`: causa 10 de dano, ou 25 com o pé de cabra equipado. O vigia tem 60 de resistência. Um golpe que o derruba impede sua reação.
-- `defender`: reduz de 16 para 8 o dano de um golpe neste turno. A defesa não fica acumulada para turnos posteriores.
-- `distrair`: com a lanterna equipada, ofusca o vigia e cancela sua reação e o golpe preparado. Funciona uma vez por inimigo; depois ele protege os olhos.
-- `fugir sul`: sai do porão sem sofrer o golpe pendente. Precisa de uma saída existente e aberta. `ir sul` também permite abandonar o encontro. O vigia permanece no cômodo, com a resistência e o alerta preservados; não persegue Joseph.
-- `esgueirar norte`: entra silenciosamente. Um inimigo que ainda não percebeu Joseph continua desatento. Examinar, olhar, esperar e esconder-se preservam a furtividade; manipular objetos ou atacar revela Joseph. Não é possível despistar um vigia já alertado simplesmente entrando novamente em silêncio.
-- `esconder`: mantém Joseph fora de vista antes de ser percebido. Não funciona quando o vigia já está acompanhando seus movimentos.
-- `esperar`: passa um turno. `status` mostra vida, medo, equipamento e turnos.
+O jogo busca construir tensão por meio de descoberta gradual, vulnerabilidade, exploração coerente e consequências narrativas, e não pela quantidade de confrontos.
 
-Ao perceber Joseph, o vigia gasta a primeira reação se virando e aumenta o medo em 5. Nas reações seguintes, alterna entre anunciar e executar um golpe. Cada golpe aumenta o medo em 5. Beber chá ainda reduz o medo em 30 antes da reação inimiga; receber um golpe em seguida pode aumentar o medo novamente. Equipar ou largar itens durante o confronto também custa um turno.
+A história foi concebida com **desfechos alternativos**, que permanecem fora deste README para preservar a experiência.
 
-É possível completar todo o puzzle, ler a pasta e voltar sem atacar ou sofrer dano: examine a porta para descobrir a ronda, entre com `esgueirar norte`, examine a pasta e saia com `esgueirar sul`. O confronto não bloqueia documentos nem exige derrotar o vigia.
+## Documentação adicional
 
-## Solução do novo bloco (spoilers)
+- [Interface e comandos visuais](GUI_README.md)
+- [Projeto do mundo e mapa](WORLD_DESIGN.md)
+- [Progresso da campanha](CAMPAIGN_PROGRESS.md)
+- [Narração e linguagem natural — Fase 4.5.5](FASE4_5_5.md)
 
-```text
-ir norte
-examinar retrato
-examinar inscrição
-ir oeste
-pegar pé de cabra
-ir leste
-usar pé de cabra na gaveta
-pegar chave do armário
-ir leste
-usar chave do armário no armário
-examinar bilhete
-digitar 0417 no cofre
-pegar chave do porão
-ir oeste
-usar chave do porão na porta do porão
-examinar porta do porão
-esgueirar norte
-examinar pasta de joseph
-esgueirar sul
-```
+---
 
-A pasta encerra este bloco narrativo e aponta para a ala superior. Na Fase 4.3, o Corredor Superior é acessível pela escadaria; a porta do quarto permanece trancada. O código do cofre pode ser inserido quando conhecido; não há bloqueio artificial exigindo a leitura prévia do bilhete.
+<div align="center">
 
+**EVOLUCYS: THE ESTATE**
 
-Consulte FASE4_4.md para documentos visuais, chaves por IDs, áudio offline e roteiro de validação.
+*Nem todo lugar abandonado está vazio.*
 
+**Projeto independente — em desenvolvimento**
 
-
+</div>
