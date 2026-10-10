@@ -1,0 +1,23 @@
+EVOLUCYS: THE ESTATE — instruções para o Codex
+
+Estou enviando quatro arquivos Python que formam a base atual do jogo:
+- world.py
+- game_state.py
+- command_parser.py
+- main.py
+
+Use esses arquivos como a base existente do projeto.
+
+IMPORTANTE:
+1. Não use NexForge. Este projeto é independente.
+2. Preserve a separação modular dos arquivos.
+3. Não reescreva ou remova funcionalidades existentes sem necessidade.
+4. Primeiro, verifique se os quatro arquivos funcionam juntos e corrija apenas erros necessários.
+5. O jogo tem Joseph como protagonista, vida, medo, inventário de 6 espaços, item equipado, celular, exploração por cômodos e parser de comandos.
+6. Já existem entrada da mansão, salão principal, cozinha e escritório.
+7. O parser já permite olhar/examinar, pegar, equipar, mover, abrir objetos, usar item em objeto, consultar inventário e celular.
+8. O chá reduz o medo em 30 pontos.
+9. O próximo desenvolvimento deve criar objetos escondidos, recipientes que revelem itens, portas trancadas e puzzles encadeados, mantendo a arquitetura organizada e expansível.
+10. Antes de implementar mudanças grandes, explique resumidamente quais arquivos serão alterados.
+
+Comece validando a base atual. Depois implemente o próximo bloco de exploração e puzzles sem transformar tudo em um único arquivo.
